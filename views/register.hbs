@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Register</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KK94CHFLLe+nY2dmCWGMq91rCGa5gtU4mk92HdvYe+M/SXH301p5ILy+dN9+nJOZ" crossorigin="anonymous">
+
+</head>
+<body>
+    <div class="container mt-4">
+        <div class="card  w-50  mx-auto pre-center">
+            <div class="card-header text-center">
+                <h4>Student Information</h4>
+            </div>
+            <div class="card-body">
+                {{!-- {{}} - sysntax of hb --}}
+                {{#if message}}
+                <h4 class="alert alert-danger mt-4">                     
+                    {{message}}
+                </h4>
+                {{/if}}
+                <form action="/auth/register" method="post">
+                    <label for="first_name" class="pb-3">First Name</label>
+                    <input type="text" name="first_name" id="first_name" class="form-control" placeholder="Enter First Name">
+
+                    <label for="last_name" class="pb-3 pt-3">Last Name</label>
+                    <input type="text" name="last_name" id="last_name" class="form-control" placeholder="Enter Last Name">
+
+                    <label for="course_id" class="pb-3 pt-3">Course</label>
+                    <select name="course_id" id="course_id" class="form-control">
+                        <option value="">Select Course</option>
+                        <option value="4">Front-End Development</option>
+                        <option value="5">Back-End Development</option>
+                        <option value="6">Full Stack Development</option>
+                    </select>
+
+                    <label for="email" class="pb-3 pt-3">Email</label>
+                    <input type="email" name="email" id="email" class="form-control" placeholder="Enter Email">
+
+                    <button type="submit" class="btn btn-primary mt-3 mb-3">Submit</button>
+                    <a href="/auth/back" class="btn btn-danger float-end  mt-3 mb-3">Back</a></td>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>
